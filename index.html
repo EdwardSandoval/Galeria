@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotos</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slider de Imágenes</title>
+<style>
+  /* Tu estilo actual aquí */
+
+  @keyframes autoSlide {
+    0%, 100% {
+      opacity: 0;
+    }
+    20%, 80% {
+      opacity: 1;
+    }
+  }
+
+  #kiko-slider>ul.slider li {
+    /* Mantén el estilo actual */
+    animation: autoSlide 10s infinite; /* Cambio automático cada 10 segundos */
+  }
+</style>
 </head>
-
 <body>
-
-    <div id="kiko-slider">
-
-        <ul class="slider">
-            <li id="slide1">
-                <img src="./img_tv%20(1).JPG" />
-            </li>
-            <li id="slide2">
-                <img src="./img_tv%20(3).JPG" />
-            </li>
-
-        </ul>
-
-    </div>
-
-
+<div id="kiko-slider">
+  <ul class="slider">
+    <li id="slide1">
+      <img src="./img_tv%20(5).JPG" alt="Imagen 1">
+      <h1>Título 1</h1>
+    </li>
+    <li id="slide2">
+      <img src="./img_tv%20(4).JPG" alt="Imagen 2">
+      <h1>Título 2</h1>
+    </li>
+    <li id="slide3">
+      <img src="img_tv%20(1).JPG" alt="Imagen 3">
+      <h1>Título 3</h1>
+    </li>
+    <!-- Agrega más imágenes aquí -->
+  </ul>
+  <ul class="menu">
+    <li><a href="#slide1">1</a></li>
+    <li><a href="#slide2">2</a></li>
+    <li><a href="#slide3">3</a></li>
+    <!-- Agrega más enlaces aquí -->
+  </ul>
+</div>
 </body>
-
 </html>
