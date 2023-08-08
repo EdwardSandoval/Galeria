@@ -1,87 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Galería de imágenes aleatorias</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
-body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10px auto;
-}
-
-.img {
-  width: 800px;
-  height: 800px;
-  margin: 10px;
-  border: 1px solid #ccc;
-}
-
-.img img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.img .caption {
-  display: none;
-}
-
-.img:hover .caption {
-  display: block;
-}
-
-.next {
-  display: block;
-  margin: 10px auto;
-  width: 800px;
-  height: 240px;
-  background-color: #000;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.next:hover {
-  background-color: #ccc;
-}
-</style>
+<title>Presentación de imágenes aleatorias</title>
 </head>
 <body>
 
-<div class="gallery">
-  <div class="img">
-    <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(1).JPG" alt="Image 1">
-    <div class="caption">This is image 1 edit</div>
-  </div>
-  <div class="img">
-    <img src="https://github.com/EdwardSandoval/Galeria/blob/gh-pages/img_tv%20(2).JPG" alt="Image 2">
-    <div class="caption">This is image 2 edit</div>
-  </div>
-  <div class="img">
-    <img src="https://github.com/EdwardSandoval/Galeria/blob/gh-pages/img_tv%20(1).JPG?raw=true" alt="Image 3">
-    <div class="caption">This is image 3</div>
-  </div>
-  <div class="img">
-    <img src="https://danegovco.sharepoint.com/sites/DANE_buc_sistemas_0365/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FDANE%5Fbuc%5Fsistemas%5F0365%2FShared%20Documents%2FVisorImagenes&viewid=0650132d%2D3b9f%2D42ac%2D9dc4%2D0b0c18a8d9e3/img_tv (23).jpg" alt="Image 4">
-    <div class="caption">This is image 4</div>
-  </div>
+<h1>Presentación de imágenes aleatorias</h1>
+
+<div id="images">
+  <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(1).JPG" alt="Imagen 1">
+  <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(2).JPG" alt="Imagen 2">
+  <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(3).JPG" alt="Imagen 3">
+  <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(4).JPG" alt="Imagen 4">
+  <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(5).JPG" alt="Imagen 5">
 </div>
 
 <script>
-function nextImage() {
-  var images = document.querySelectorAll(".img");
+// Esta función muestra una imagen aleatoria de la lista.
+function showRandomImage() {
+  var images = document.getElementById("images").getElementsByTagName("img");
   var randomImage = images[Math.floor(Math.random() * images.length)];
   randomImage.style.display = "block";
-  otherImages.style.display = "none";
 }
 
-setInterval(nextImage, 5000);
+// Esta función se ejecuta cuando la página se carga.
+window.onload = showRandomImage;
 </script>
 
 </body>
