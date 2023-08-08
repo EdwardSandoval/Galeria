@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de Slider con HTML y CSS</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentación de Imágenes</title>
+<style>
+  #slideshow {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .fade-in {
+    animation: fadeAnimation 5s ease-in-out infinite;
+  }
+
+  @keyframes fadeAnimation {
+    0%, 100% {
+      opacity: 0;
+    }
+    10%, 90% {
+      opacity: 1;
+    }
+  }
+</style>
 </head>
-
 <body>
-
-    <div id="kiko-slider">
-
-        <ul class="slider">
-            <li id="slide1">
-                <h1>Hola Programadores</h1>
-                <img src="./img_tv%20(1).JPG" />
-            </li>
-            <li id="slide2">
-                <img src="./img_tv%20(3).JPG" />
-            </li>
-            <li id="slide3">
-                <h1>Ejemplo con otros elementos</h1>
-                <p>Esto es un párrafo de ejemplo para comprobar que podemos meter cualquier tipo de elementos en el
-                    slider</p>
-                <a href="https://kikopalomares.com/" target="_blank">¡Corre a mi web para más contenido!</a>
-            </li>
-        </ul>
-
-        <ul class="menu">
-            <li>
-                <a href="#slide1">1</a>
-            </li>
-            <li>
-                <a href="#slide2">2</a>
-            </li>
-            <li>
-                <a href="#slide3">3</a>
-            </li>
-        </ul>
-
-    </div>
-
-    <div style="display: none;">
-        <a href="https://kikopalomares.com/" target="_blank">Powered by Kiko Palomares</a>
-    </div>
-
+<div id="slideshow">
+  
+  <img class="slide fade-in" src="./img_tv%20(1).JPG" alt="Imagen 1">
+  <img class="slide fade-in" src="./img_tv%20(2).JPG" alt="Imagen 2">
+  <img class="slide fade-in" src="./img_tv%20(3).JPG" alt="Imagen 3">
+  <img class="slide fade-in" src="./img_tv%20(4).JPG" alt="Imagen 4">
+  <img class="slide fade-in" src="./img_tv%20(5).JPG" alt="Imagen 5">
+  <!-- Agrega más imágenes aquí -->
+</div>
 </body>
-
 </html>
