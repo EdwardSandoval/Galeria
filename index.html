@@ -1,57 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Presentación de Imágenes</title>
-<style>
-  #slideshow {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .slides {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    width: 100%;
-    height: auto;
-    animation: fadeAnimation 15s infinite;
-  }
-
-  #slide1:checked ~ .slides .slide1,
-  #slide2:checked ~ .slides .slide2,
-  #slide3:checked ~ .slides .slide3 {
-    opacity: 1;
-  }
-
-  @keyframes fadeAnimation {
-    0%, 100% {
-      opacity: 0;
-    }
-    16.66%, 83.33% {
-      opacity: 1;
-    }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Slider con HTML y CSS</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
+
 <body>
-<div id="slideshow">
-  <input type="radio" id="slide1" name="slides" checked>
-  <input type="radio" id="slide2" name="slides">
-  <input type="radio" id="slide3" name="slides">
-  
-  <div class="slides">
-    <img class="slide1" src="./img_tv%20(1).JPG" alt="Imagen 1">
-    <img class="slide2" src="./img_tv%20(1).JPG" alt="Imagen 2">
-    <img class="slide3" src="./img_tv%20(5).JPG" alt="Imagen 3">
-    <!-- Agrega más imágenes aquí -->
-  </div>
-</div>
+
+    <div id="kiko-slider">
+
+        <ul class="slider">
+            <li id="slide1">
+                <h1>Hola Programadores</h1>
+                <img src="./img_tv%20(1).JPG" />
+            </li>
+            <li id="slide2">
+                <img src="./img_tv%20(3).JPG" />
+            </li>
+
+        </ul>
+
+        <ul class="menu">
+            <li>
+                <a href="#slide1">1</a>
+            </li>
+            <li>
+                <a href="#slide2">2</a>
+            </li>
+            <li>
+                <a href="#slide3">3</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div style="display: none;">
+        <a href="https://kikopalomares.com/" target="_blank">Powered by Kiko Palomares</a>
+    </div>
+
 </body>
+
 </html>
