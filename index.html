@@ -13,24 +13,28 @@
     overflow: hidden;
   }
 
-  .slide {
+  .slides {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
     width: 100%;
     height: auto;
+    animation: fadeAnimation 15s infinite;
   }
 
-  .fade-in {
-    animation: fadeAnimation 5s ease-in-out infinite;
+  #slide1:checked ~ .slides .slide1,
+  #slide2:checked ~ .slides .slide2,
+  #slide3:checked ~ .slides .slide3 {
+    opacity: 1;
   }
 
   @keyframes fadeAnimation {
     0%, 100% {
       opacity: 0;
     }
-    10%, 90% {
+    16.66%, 83.33% {
       opacity: 1;
     }
   }
@@ -38,13 +42,16 @@
 </head>
 <body>
 <div id="slideshow">
+  <input type="radio" id="slide1" name="slides" checked>
+  <input type="radio" id="slide2" name="slides">
+  <input type="radio" id="slide3" name="slides">
   
-  <img class="slide fade-in" src="./img_tv%20(1).JPG" alt="Imagen 1">
-  <img class="slide fade-in" src="./img_tv%20(2).JPG" alt="Imagen 2">
-  <img class="slide fade-in" src="./img_tv%20(3).JPG" alt="Imagen 3">
-  <img class="slide fade-in" src="./img_tv%20(4).JPG" alt="Imagen 4">
-  <img class="slide fade-in" src="./img_tv%20(5).JPG" alt="Imagen 5">
-  <!-- Agrega más imágenes aquí -->
+  <div class="slides">
+    <img class="slide1" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(1).JP3" alt="Imagen 1">
+    <img class="slide2" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(1).JPG" alt="Imagen 2">
+    <img class="slide3" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(5).JPG" alt="Imagen 3">
+    <!-- Agrega más imágenes aquí -->
+  </div>
 </div>
 </body>
 </html>
