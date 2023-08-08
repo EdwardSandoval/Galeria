@@ -18,21 +18,32 @@
     top: 0;
     left: 0;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    width: 100%;
+    height: auto;
   }
 
-  .slide.active {
-    opacity: 1;
+  .fade-in {
+    animation: fadeAnimation 5s ease-in-out infinite;
+  }
+
+  @keyframes fadeAnimation {
+    0%, 100% {
+      opacity: 0;
+    }
+    10%, 90% {
+      opacity: 1;
+    }
   }
 </style>
 </head>
 <body>
 <div id="slideshow">
-  <img class="slide active" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(1).JPG" alt="Imagen 1">
-  <img class="slide" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(2).JPG" alt="Imagen 2">
-  <img class="slide" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(3).JPG" alt="Imagen 3">
-  <img class="slide" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(4).JPG" alt="Imagen 4">
-  <img class="slide" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(5).JPG" alt="Imagen 5">
+  
+  <img class="slide fade-in" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(1).JPG" alt="Imagen 1">
+  <img class="slide fade-in" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(2).JPG" alt="Imagen 2">
+  <img class="slide fade-in" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(3).JPG" alt="Imagen 3">
+  <img class="slide fade-in" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(4).JPG" alt="Imagen 4">
+  <img class="slide fade-in" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(5).JPG" alt="Imagen 5">
   <!-- Agrega más imágenes aquí -->
 </div>
 </body>
