@@ -1,31 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>Imagenes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentación de Imágenes</title>
+<style>
+  #slideshow {
+    display: none;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+</style>
 </head>
 <body>
-
-<h1>imagenes</h1>
-
-<div id="images">
+<div id="slideshow">
   <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(1).JPG" alt="Imagen 1">
   <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(2).JPG" alt="Imagen 2">
   <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(3).JPG" alt="Imagen 3">
   <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(4).JPG" alt="Imagen 4">
   <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(5).JPG" alt="Imagen 5">
+  <!-- Agrega más imágenes aquí -->
 </div>
 
 <script>
-// Esta función muestra una imagen aleatoria de la lista.
-function showRandomImage() {
-  var images = document.getElementById("images").getElementsByTagName("img");
-  var randomImage = images[Math.floor(Math.random() * images.length)];
-  randomImage.style.display = "block";
-}
+  const slideshow = document.getElementById("slideshow");
+  const images = slideshow.getElementsByTagName("img");
+  let currentIndex = 0;
 
-// Esta función se ejecuta cuando la página se carga.
-window.onload = showRandomImage;
+  function showRandomImage() {
+    const previousIndex = currentIndex;
+    while (currentIndex === previousIndex) {
+      currentIndex = Math.floor(Math.random() * images.length);
+    }
+    for (let i = 0; i < images.length; i++) {
+      images[i].style.display = "none";
+    }
+    images[currentIndex].style.display = "block";
+  }
+
+  // Mostrar una imagen aleatoria al cargar la página
+  showRandomImage();
+
+  // Cambiar a una imagen aleatoria cada 3 segundos (ajusta este valor según tus preferencias)
+  setInterval(showRandomImage, 3000);
 </script>
-
 </body>
 </html>
