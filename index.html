@@ -6,44 +6,34 @@
 <title>Presentación de Imágenes</title>
 <style>
   #slideshow {
-    display: none;
     max-width: 100%;
     height: auto;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
   }
 </style>
 </head>
 <body>
 <div id="slideshow">
-  <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(1).JPG" alt="Imagen 1">
-  <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(2).JPG" alt="Imagen 2">
-  <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(3).JPG" alt="Imagen 3">
-  <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(4).JPG" alt="Imagen 4">
-  <img src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(5).JPG" alt="Imagen 5">
+  <img class="slide active" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(1).JPG" alt="Imagen 1">
+  <img class="slide" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(2).JPG" alt="Imagen 2">
+  <img class="slide" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(3).JPG" alt="Imagen 3">
+  <img class="slide" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(4).JPG" alt="Imagen 4">
+  <img class="slide" src="https://raw.githubusercontent.com/EdwardSandoval/Galeria/gh-pages/img_tv%20(5).JPG" alt="Imagen 5">
   <!-- Agrega más imágenes aquí -->
 </div>
-
-<script>
-  const slideshow = document.getElementById("slideshow");
-  const images = slideshow.getElementsByTagName("img");
-  let currentIndex = 0;
-
-  function showRandomImage() {
-    const previousIndex = currentIndex;
-    while (currentIndex === previousIndex) {
-      currentIndex = Math.floor(Math.random() * images.length);
-    }
-    for (let i = 0; i < images.length; i++) {
-      images[i].style.display = "none";
-    }
-    images[currentIndex].style.display = "block";
-  }
-
-  // Mostrar una imagen aleatoria al cargar la página
-  showRandomImage();
-
-  // Cambiar a una imagen aleatoria cada 3 segundos (ajusta este valor según tus preferencias)
-  setInterval(showRandomImage, 3000);
-</script>
 </body>
 </html>
